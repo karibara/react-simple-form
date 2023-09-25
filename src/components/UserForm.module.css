@@ -16,3 +16,7 @@ label {
 .user-form {
     padding: 2rem;
 }
+
+.user-form__div {
+    display: flex;
+}
