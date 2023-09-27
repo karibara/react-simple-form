@@ -4,7 +4,7 @@ const User = (props) => {
   return (
     <div>
       <p>
-        {props.userName}, ({props.userAge} years old)
+        {props.userName}, {props.userAge}
       </p>
     </div>
   );
