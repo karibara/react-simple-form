@@ -1,19 +1,13 @@
 import React, { useState } from "react";
-import Card from "./UI/Card";
-import User from "./User";
+// import Card from "./UI/Card";
 
 const UserList = (props) => {
-  // let alertMessage = (
-  //   <p>Please enter a valid name and age (non-empty values)</p>
-  // );
-
-  // const [isInvalid, setIsInvalid] = useState(false);
-  const dupaUser = props.user;
+  console.log(props.newUserData);
 
   return (
-    <Card>
-      <User newUser={dupaUser} />
-    </Card>
+    <div>
+      <p></p>
+    </div>
   );
 };
 

@@ -8,6 +8,7 @@ function App() {
   const userDataHandler = (enteredData) => {
     const userData = {
       ...enteredData,
+      id: Math.random().toString(),
     };
     setNewUserData(userData);
   };
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <UserForm onSubmitUserData={userDataHandler} />
+      <UserForm submitUserData={userDataHandler} />
       <UserList user={newUserData} />
     </div>
   );

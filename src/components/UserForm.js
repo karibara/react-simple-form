@@ -25,7 +25,7 @@ const UserForm = (props) => {
     };
 
     //the object with stored data from form (savingsFormData) is a function parameter, so we can pass it up to the parrent component by calling onSavesavingsFormData fnc in parent component
-    props.onSubmitUserData(userData);
+    props.submitUserData(userData);
 
     // clear inputs using two-way binding by adding the value property to input and set it to empty string
     setEnteredName("");
