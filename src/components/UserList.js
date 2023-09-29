@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Card from "./UI/Card";
+import styles from "./UserList.module.css";
 
 const UserList = (props) => {
-  console.log(props.user);
+  console.log(props.addedUsers);
 
   return (
     <Card>
-      <p>
-        {props.user.userName}
-        {props.user.userAge}
-      </p>
+      <div className={styles["user-frame"]}>
+        <p>{/* {props.user.userName} ({props.user.userAge} years old) */}</p>
+      </div>
     </Card>
   );
 };

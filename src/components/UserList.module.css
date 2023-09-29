@@ -1,0 +1,9 @@
+.user-frame {
+    font-weight: 700;
+    line-height: 0.1;
+    margin: 2rem;
+    padding: 0 1rem;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    width: 30rem;
+}

@@ -6,19 +6,21 @@ function App() {
   const [newUserData, setNewUserData] = useState("");
 
   const userDataHandler = (enteredData) => {
+    const users = [];
     const userData = {
       ...enteredData,
       id: Math.random().toString(),
     };
-    setNewUserData(userData);
+    users.push(userData);
+    setNewUserData(users);
   };
 
-  // console.log(newUserData);
+  console.log(newUserData);
 
   return (
     <div>
       <UserForm submitUserData={userDataHandler} />
-      <UserList user={newUserData} />
+      <UserList addedUsers={newUserData} />
     </div>
   );
 }
