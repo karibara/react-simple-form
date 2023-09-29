@@ -13,7 +13,7 @@ function App() {
     setNewUserData(userData);
   };
 
-  console.log(newUserData);
+  // console.log(newUserData);
 
   return (
     <div>

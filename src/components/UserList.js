@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-// import Card from "./UI/Card";
+import Card from "./UI/Card";
 
 const UserList = (props) => {
-  console.log(props.newUserData);
+  console.log(props.user);
 
   return (
-    <div>
-      <p></p>
-    </div>
+    <Card>
+      <p>
+        {props.user.userName}
+        {props.user.userAge}
+      </p>
+    </Card>
   );
 };
 
