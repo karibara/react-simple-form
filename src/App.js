@@ -3,24 +3,30 @@ import UserForm from "./components/UserForm";
 import UserList from "./components/UserList";
 
 function App() {
-  const [newUserData, setNewUserData] = useState("");
+  // use useState to create an array of users
+  const [users, setUsers] = useState([]);
 
-  const userDataHandler = (enteredData) => {
-    const users = [];
+  const userDataHandler = (newUser) => {
+    // newUser is an object with entered data from form + added id
     const userData = {
-      ...enteredData,
+      ...newUser,
       id: Math.random().toString(),
     };
-    users.push(userData);
-    setNewUserData(users);
+
+    // with useState new users are pushed to an array, and it is automaticly updated
+    setUsers((prevUsers) => {
+      return [newUser, ...prevUsers];
+    });
   };
 
-  console.log(newUserData);
+  // just check if passing data from form works
+  // console.log(newUserData);
 
   return (
     <div>
       <UserForm submitUserData={userDataHandler} />
-      <UserList addedUsers={newUserData} />
+      {/* array of users is passed to UserListr via props */}
+      <UserList addedUsers={users} />
     </div>
   );
 }
