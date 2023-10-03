@@ -1,0 +1,20 @@
+.alert-title {
+    background-color: #600b43;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 12px 12px 0 0 ;
+}
+
+.alert-text {
+    padding: 0.5rem 2rem;
+}
+
+.alert-div_btn {
+    display: flex;
+    margin: 0.5rem 2rem;
+}
+
+.alert-card {
+    display: block;
+    width: 34rem;
+}
