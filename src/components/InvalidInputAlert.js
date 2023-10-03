@@ -5,6 +5,13 @@ import Button from "./UI/Button";
 import style from "./InvalidInputAlert.module.css";
 
 const InvalidInputAlert = (props) => {
+  
+  const hideAlertHandler = () => {
+    
+  }
+// https://codesandbox.io/s/react-usestate-open-and-close-buttons-ryl84?file=/src/styles.css
+
+
   return (
     <Card className={style["alert-card"]}>
       <div className={style["alert-title"]}>
@@ -13,7 +20,7 @@ const InvalidInputAlert = (props) => {
       <div className={style["alert-text"]}>
         <h4>{props.message}</h4>
       <div className={style["alert-div__btn"]}>
-        <Button>Okay</Button>
+        <Button onClick={hideAlertHandler}>Okay</Button>
       </div>
       </div>
     </Card>
