@@ -21,7 +21,7 @@ function App() {
     if (userData.userAge < 1 || userData.userAge > 105) {
       setAlert(<InvalidInputAlert message={invalidAge} />);
     } else if (userData.userName.trim().length < 2) {
-      // console.log("user name is incorrect!!!");
+      
       setAlert(<InvalidInputAlert message={invalidData} />);
     } else {
       // with useState new users are pushed to an array, and it is automaticly updated

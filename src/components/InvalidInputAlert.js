@@ -12,9 +12,9 @@ const InvalidInputAlert = (props) => {
       </div>
       <div className={style["alert-text"]}>
         <h4>{props.message}</h4>
-      </div>
       <div className={style["alert-div__btn"]}>
         <Button>Okay</Button>
+      </div>
       </div>
     </Card>
   );
