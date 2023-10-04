@@ -33,7 +33,7 @@ const UserForm = (props) => {
   };
 
   return (
-    <Card>
+    <Card className={styles["user-form__card"]}>
       <form className={styles["user-form"]} onSubmit={submitHandler}>
         <label>User name</label>
         <input type="text" value={enteredName} onChange={nameHandler} />

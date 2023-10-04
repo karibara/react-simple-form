@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UserForm from "./components/UserForm";
 import UserList from "./components/UserList";
 import InvalidInputAlert from "./components/InvalidInputAlert";
+import "./index.css";
 
 function App() {
   // use useState to create an array of users
@@ -21,7 +22,6 @@ function App() {
     if (userData.userAge < 1 || userData.userAge > 105) {
       setAlert(<InvalidInputAlert message={invalidAge} />);
     } else if (userData.userName.trim().length < 2) {
-      
       setAlert(<InvalidInputAlert message={invalidData} />);
     } else {
       // with useState new users are pushed to an array, and it is automaticly updated

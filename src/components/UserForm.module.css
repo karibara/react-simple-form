@@ -20,3 +20,11 @@ label {
 .user-form__div {
     display: flex;
 }
+
+.user-form__card {
+    position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  

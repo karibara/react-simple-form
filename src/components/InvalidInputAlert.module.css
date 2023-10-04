@@ -9,12 +9,22 @@
     padding: 0 2rem 2rem 2rem ;
 }
 
-.alert-div_btn {
+.alert-div__btn {
     display: flex;
 }
 
 .alert-card {
     display: block;
     width: 34rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
 }

@@ -5,29 +5,50 @@ import Button from "./UI/Button";
 import style from "./InvalidInputAlert.module.css";
 
 const InvalidInputAlert = (props) => {
-  
+  const [alertOff, setAlertOff] = useState(false);
   const hideAlertHandler = () => {
-    
-  }
-// https://codesandbox.io/s/react-usestate-open-and-close-buttons-ryl84?file=/src/styles.css
+    setAlertOff(!alertOff);
+  };
 
+  console.log(alertOff);
 
   return (
-    <Card className={style["alert-card"]}>
-      <div className={style["alert-title"]}>
-        <h3>Invalid input</h3>
+    <Card
+      className={
+        !alertOff ? `${style["alert-card"]}` : `${!alertOff && style.hide}`
+      }
+    >
+      <div
+        className={
+          !alertOff ? `${style["alert-title"]}` : `${!alertOff && style.hide}`
+        }
+      >
+        <h3 className={`${alertOff && style.hide}`}>Invalid input</h3>
       </div>
       <div className={style["alert-text"]}>
-        <h4>{props.message}</h4>
-      <div className={style["alert-div__btn"]}>
-        <Button onClick={hideAlertHandler}>Okay</Button>
-      </div>
+        <h4 className={`${alertOff && style.hide}`}>{props.message}</h4>
+        <div
+          className={
+            !alertOff
+              ? `${style["alert-div__btn"]}`
+              : `${!alertOff && style.hide}`
+          }
+        >
+          <Button
+            onClick={hideAlertHandler}
+            className={`${alertOff && style.hide}`}
+          >
+            Okay
+          </Button>
+        </div>
       </div>
     </Card>
   );
 };
 
 export default InvalidInputAlert;
+
+//
 
 // let alert;
 
