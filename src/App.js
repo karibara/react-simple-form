@@ -46,7 +46,9 @@ function App() {
       {ageAlert && (
         <InvalidInputAlert message={invalidAge} onBtnClick={hideHandler} />
       )}
-      {dataAlert && <InvalidInputAlert message={invalidData} />}
+      {dataAlert && (
+        <InvalidInputAlert message={invalidData} onBtnClick={hideHandler} />
+      )}
 
       {/* array of users is passed to UserListr via props */}
       {/* <UserList addedUsers={users} /> */}
