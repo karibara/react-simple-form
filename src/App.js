@@ -7,7 +7,8 @@ import "./index.css";
 function App() {
   // use useState to create an array of users
   const [users, setUsers] = useState([]);
-  const [alert, setAlert] = useState();
+  const [ageAlert, setAgeAlert] = useState(false);
+  const [dataAlert, setDataAlert] = useState(false);
   const invalidData = "Please, enter a valid name and age (non-empty values)";
   const invalidAge = "Please, enter a valid age ( > 0)";
 
@@ -19,10 +20,10 @@ function App() {
     };
 
     // validation for user name length and user age
-    if (userData.userAge < 1 || userData.userAge > 105) {
-      setAlert(<InvalidInputAlert message={invalidAge} />);
-    } else if (userData.userName.trim().length < 2) {
-      setAlert(<InvalidInputAlert message={invalidData} />);
+    if (userData.userName.trim().length < 2) {
+      setDataAlert(true);
+    } else if (userData.userAge < 1 || userData.userAge > 105) {
+      setAgeAlert(true);
     } else {
       // with useState new users are pushed to an array, and it is automaticly updated
       setUsers((prevUsers) => {
@@ -34,11 +35,20 @@ function App() {
   // just check if passing data from form works
   // console.log(newUserData);
 
+  const hideHandler = () => {
+    setAgeAlert(false);
+    setDataAlert(false);
+  };
+
   return (
     <div>
       <UserForm submitUserData={userDataHandler} />
+      {ageAlert && (
+        <InvalidInputAlert message={invalidAge} onBtnClick={hideHandler} />
+      )}
+      {dataAlert && <InvalidInputAlert message={invalidData} />}
+
       {/* array of users is passed to UserListr via props */}
-      {alert}
       {/* <UserList addedUsers={users} /> */}
     </div>
   );

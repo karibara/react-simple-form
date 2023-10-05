@@ -8,35 +8,22 @@ import style from "./InvalidInputAlert.module.css";
 // https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/quiz/5775802#overview
 
 const InvalidInputAlert = (props) => {
-  const [alertOff, setAlertOff] = useState(false);
+  // const [alertOff, setAlertOff] = useState(false);
 
   const hideAlertHandler = () => {
-    setAlertOff(true);
+    // setAlertOff(true);
   };
-
+  console.log(props.onBtnClick);
 
   return (
-    <Card
-      className={
-        !alertOff ? `${style["alert-card"]}` : `${style["hide"]}`
-      }
-    >
-      <div
-        className={style["alert-title"]}
-      >
+    <Card className={style["alert-card"]}>
+      <div className={style["alert-title"]}>
         <h3>Invalid input</h3>
       </div>
       <div className={style["alert-text"]}>
         <h4>{props.message}</h4>
-        <div
-          className={style["alert-div__btn"]}
-        >
-          <Button
-            onClick={hideAlertHandler}
-    
-          >
-            Okay
-          </Button>
+        <div className={style["alert-div__btn"]}>
+          <Button onClick={props.onBtnClick}>Okay</Button>
         </div>
       </div>
     </Card>
@@ -44,5 +31,4 @@ const InvalidInputAlert = (props) => {
 };
 
 export default InvalidInputAlert;
-
-
+// className={!alertOff ? `${style["alert-card"]}` : `${style["hide"]}`}
