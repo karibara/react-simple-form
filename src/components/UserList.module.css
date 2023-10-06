@@ -1,4 +1,4 @@
-.user-frame {
+.userlist-frame {
     font-weight: 700;
     line-height: 0.1;
     margin: 2rem;
@@ -6,4 +6,15 @@
     border-radius: 25px;
     border: 1px solid #ccc;
     width: 30rem;
+}
+
+.userlist-card {
+    position: relative;
+      top: 10%;
+      left: 45%;
+      transform: translate(-50%, -20%);
+
+    display: block;
+    padding: 2rem;
+    z-index: -10;
 }

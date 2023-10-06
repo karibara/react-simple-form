@@ -15,6 +15,7 @@ label {
 
 .user-form {
     padding: 2rem;
+    
 }
 
 .user-form__div {
@@ -22,9 +23,9 @@ label {
 }
 
 .user-form__card {
-    position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    position: relative;
+      top: 50%;
+      left: 45%;
+      transform: translate(-50%, -20%);
   }
   

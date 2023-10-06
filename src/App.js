@@ -7,6 +7,7 @@ import "./index.css";
 function App() {
   // use useState to create an array of users
   const [users, setUsers] = useState([]);
+  const [userListOn, setUserListOn] = useState(false);
   const [ageAlert, setAgeAlert] = useState(false);
   const [dataAlert, setDataAlert] = useState(false);
   const invalidData = "Please, enter a valid name and age (non-empty values)";
@@ -29,6 +30,7 @@ function App() {
       setUsers((prevUsers) => {
         return [newUser, ...prevUsers];
       });
+      setUserListOn(true);
     }
   };
 
@@ -51,7 +53,7 @@ function App() {
       )}
 
       {/* array of users is passed to UserListr via props */}
-      {/* <UserList addedUsers={users} /> */}
+      {userListOn && <UserList addedUsers={users} />}
     </div>
   );
 }

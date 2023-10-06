@@ -1,24 +1,18 @@
 import React, { useState } from "react";
 import Card from "./UI/Card";
+import NewUser from "./NewUser";
 import styles from "./UserList.module.css";
 
 const UserList = (props) => {
-  // let usersNumber = props.addedUsers.length;
-  // // console.log(usersNumber);
+  let usersOnList;
 
-  // let message = "no users on the list";
+  if (props.addedUsers.length > 0) {
+    usersOnList = props.addedUsers.map((user) => (
+      <NewUser name={user.userName} age={user.userAge} key={user.id} />
+    ));
+  }
 
-  // if (usersNumber > 0) {
-  //   message = "list is working!!!!";
-  // }
-
-  return (
-    <Card>
-      <div className={styles["user-frame"]}>
-        <p>message</p>
-      </div>
-    </Card>
-  );
+  return <Card className={styles["userlist-card"]}>{usersOnList}</Card>;
 };
 
 export default UserList;
