@@ -10,23 +10,22 @@ import style from "./InvalidInputAlert.module.css";
 const InvalidInputAlert = (props) => {
   // const [alertOff, setAlertOff] = useState(false);
 
-  const hideAlertHandler = () => {
-    // setAlertOff(true);
-  };
   console.log(props.onBtnClick);
 
   return (
-    <Card className={style["alert-card"]}>
-      <div className={style["alert-title"]}>
-        <h3>Invalid input</h3>
-      </div>
-      <div className={style["alert-text"]}>
-        <h4>{props.message}</h4>
-        <div className={style["alert-div__btn"]}>
-          <Button onClick={props.onBtnClick}>Okay</Button>
+    <div className={style["alert-container"]}>
+      <Card className={style["alert-card"]}>
+        <div className={style["alert-title"]}>
+          <h3>Invalid input</h3>
         </div>
-      </div>
-    </Card>
+        <div className={style["alert-text"]}>
+          <h4>{props.message}</h4>
+          <div className={style["alert-div__btn"]}>
+            <Button onClick={props.onBtnClick}>Okay</Button>
+          </div>
+        </div>
+      </Card>
+    </div>
   );
 };
 
