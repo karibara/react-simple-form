@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UserForm from "./components/UserForm";
 import UserList from "./components/UserList";
-import InvalidInputModal from "./components/InvalidInputModal";
+import InvalidInputAlert from "./components/InvalidInputAlert";
 import "./index.css";
 
 function App() {
@@ -46,10 +46,10 @@ function App() {
     <>
       <UserForm submitUserData={userDataHandler} />
       {ageAlert && (
-        <InvalidInputModal message={invalidAge} onBtnClick={hideHandler} />
+        <InvalidInputAlert message={invalidAge} onBtnClick={hideHandler} />
       )}
       {dataAlert && (
-        <InvalidInputModal message={invalidData} onBtnClick={hideHandler} />
+        <InvalidInputAlert message={invalidData} onBtnClick={hideHandler} />
       )}
 
       {/* array of users is passed to UserListr via props */}
